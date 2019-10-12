@@ -1,5 +1,5 @@
 FROM python:3.7-alpine
-LABEL maintainer=M"Tsatsu Adogla-Bessa Jnr"
+LABEL maintainer="Tsatsu Adogla-Bessa Jnr"
 
 ENV PYTHONUNBUFFERED 1
 
