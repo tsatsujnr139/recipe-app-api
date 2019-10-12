@@ -5,7 +5,7 @@ python:
 services:
   - docker
 
-install: pip install docker-compose
+before_script: pip install docker-compose~=1.23.0
 
 script:
   - docker-compose run app python manage.py test && flake8
