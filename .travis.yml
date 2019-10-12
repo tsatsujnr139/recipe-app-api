@@ -1,11 +1,12 @@
 languauge: python
+
 python:
   - "3.7"
 
 services:
   - docker
 
-before_script: pip install docker-compose~=1.23.0
+before_install: pip install docker-compose
 
 script:
   - docker-compose run app python manage.py test && flake8
