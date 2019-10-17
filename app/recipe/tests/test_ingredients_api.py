@@ -78,7 +78,9 @@ class PrivateIngredientApiTests(TestCase):
         self.assertTrue(exists)
 
     def test_create_ingredient_invalid_payload_fails(self):
-        """test creating an ingredient with invalid payload returns valiation error"""
+        """test creating an ingredient with invalid payload 
+
+            returns valiation error"""
         payload = {
             'name': ''
         }
