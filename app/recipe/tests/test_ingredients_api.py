@@ -39,7 +39,7 @@ class PrivateIngredientApiTests(TestCase):
         self.client.force_authenticate(self.user)
 
     def test_retrieve_ingredients(self):
-        """Test retrieving tags"""
+        """Test retrieving ingredients"""
         Ingredient.objects.create(user=self.user, name='salami')
         Ingredient.objects.create(user=self.user, name='onion')
 
@@ -51,7 +51,7 @@ class PrivateIngredientApiTests(TestCase):
         self.assertEqual(res.data, serializer.data)
 
     def test_ingredients_limited_to_authenticated_user(self):
-        """Test that tags are for authenticated user"""
+        """Test that ingredients are for authenticated user"""
         user2 = get_user_model().objects.create_user(email='user2@company.com',
                                                      password='password')
 
@@ -78,7 +78,7 @@ class PrivateIngredientApiTests(TestCase):
         self.assertTrue(exists)
 
     def test_create_ingredient_invalid_payload_fails(self):
-        """test creating an ingredient with invalid payload 
+        """test creating an ingredient with invalid payload
 
             returns valiation error"""
         payload = {
